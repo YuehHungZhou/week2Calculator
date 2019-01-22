@@ -199,4 +199,33 @@
         app:layout_constraintStart_toEndOf="@+id/icon_percent"
         app:srcCompat="@drawable/calculator_divide" />
 
+    <TextView
+        android:id="@+id/sum_Text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#919191"
+        android:gravity="bottom|right"
+        android:text="3.1415926 "
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/icon_add_less"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/math_Text"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:gravity="right|fill_vertical"
+        android:text="3+0.1415926"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="41dp" />
+
 </android.support.constraint.ConstraintLayout>
