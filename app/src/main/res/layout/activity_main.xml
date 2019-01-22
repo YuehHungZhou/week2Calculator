@@ -4,15 +4,199 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF3A3A3A"
     tools:context=".MainActivity">
 
-    <TextView
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="96dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="287dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="192dp" />
+
+    <ImageView
+        android:id="@+id/number0"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/calculator_0" />
+
+    <ImageView
+        android:id="@+id/number1"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/number0"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/calculator_1" />
+
+    <ImageView
+        android:id="@+id/number4"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/number1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/calculator_4" />
+
+    <ImageView
+        android:id="@+id/number7"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/number4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/calculator_7" />
+
+    <ImageView
+        android:id="@+id/icon_clean"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/number7"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/calculator_reset" />
+
+    <ImageView
+        android:id="@+id/icon_add_less"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/number8"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toEndOf="@+id/icon_clean"
+        app:srcCompat="@drawable/calculator_changesign" />
+
+    <ImageView
+        android:id="@+id/iconDot"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toEndOf="@+id/number0"
+        app:srcCompat="@drawable/calculator_point" />
+
+    <ImageView
+        android:id="@+id/number2"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/iconDot"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toEndOf="@+id/number1"
+        app:srcCompat="@drawable/calculator_2" />
+
+    <ImageView
+        android:id="@+id/number5"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/number2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toEndOf="@+id/number4"
+        app:srcCompat="@drawable/calculator_5" />
+
+    <ImageView
+        android:id="@+id/number8"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/number5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toEndOf="@+id/number7"
+        app:srcCompat="@drawable/calculator_8" />
+
+    <ImageView
+        android:id="@+id/icon_equal"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iconDot"
+        app:srcCompat="@drawable/calculator_equals" />
+
+    <ImageView
+        android:id="@+id/number3"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/icon_equal"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toEndOf="@+id/number2"
+        app:srcCompat="@drawable/calculator_3" />
+
+    <ImageView
+        android:id="@+id/icon_add"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/icon_equal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/number3"
+        app:srcCompat="@drawable/calculator_plus" />
+
+    <ImageView
+        android:id="@+id/number6"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/number3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toEndOf="@+id/number5"
+        app:srcCompat="@drawable/calculator_6" />
+
+    <ImageView
+        android:id="@+id/icon_less"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/icon_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/number6"
+        app:srcCompat="@drawable/calculator_minus" />
+
+    <ImageView
+        android:id="@+id/number9"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/number6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toEndOf="@+id/number8"
+        app:srcCompat="@drawable/calculator_9" />
+
+    <ImageView
+        android:id="@+id/icon_cross"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/icon_less"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/number9"
+        app:srcCompat="@drawable/calculator_times" />
+
+    <ImageView
+        android:id="@+id/icon_percent"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/number9"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toEndOf="@+id/icon_add_less"
+        app:srcCompat="@drawable/calculator_percent" />
+
+    <ImageView
+        android:id="@+id/icon_divil"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/icon_cross"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/icon_percent"
+        app:srcCompat="@drawable/calculator_divide" />
 
 </android.support.constraint.ConstraintLayout>
