@@ -2,6 +2,7 @@ package com.topdsr2.week2calculator;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -43,7 +44,76 @@ public class MainActivity extends AppCompatActivity {
         show_text = (TextView) findViewById(R.id.show_text);
         answer_text = (TextView) findViewById(R.id.answer_text);
 
-        
+
+        number0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"0");
+            }
+        });
+
+        number1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"1");
+            }
+        });
+
+        number2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"2");
+            }
+        });
+
+        number3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"3");
+            }
+        });
+
+        number4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"4");
+            }
+        });
+
+        number5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"5");
+            }
+        });
+
+        number6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"6");
+            }
+        });
+
+        number7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"7");
+            }
+        });
+
+        number8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"8");
+            }
+        });
+
+        number9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"9");
+            }
+        });
 
     }
 }
