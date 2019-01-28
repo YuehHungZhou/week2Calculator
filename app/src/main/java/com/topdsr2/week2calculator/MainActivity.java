@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 show_text.setText("");
-                answer_text.setText("");
+                answer_text.setText("0");
             }
         });
 
@@ -177,14 +177,13 @@ public class MainActivity extends AppCompatActivity {
                         String[] b=a[i].split("[-]");
                         //sum_less=Integer.parseInt(b[0]);
                         for(int j=0;j<b.length;j++) {
-                           if(b[j].contains("*")||a[i].contains("/")){
+                           if(b[j].contains("*")||b[j].contains("/")){
                                 String[] c=b[j].split("[*]");
                                 for(int k=0;k<c.length;k++){
                                     if(c[k].contains("/")){
                                         String[] d=c[k].split("[/]");
-
                                         for (int l=0;l<d.length;l++){
-
+                                            
                                             Double count4=Double.parseDouble(d[l]);
                                             sum_divil = sum_divil/count4;
                                         }
@@ -205,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
                 Double count=Double.parseDouble(a[i]);
                 sum_add +=count;
                 }
-                answer_text.setText(Double.toString(sum_add));
+                answer_text.setText(String.format("%.2f",sum_add));
 
 
             }
