@@ -14,12 +14,15 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton number0,number1,number2,number3,number4,number5,number6,number7,number8,number9,
             button_dot,button_equal,button_add,button_less,button_cross,button_divil,button_percent,button_add_less,button_clean;
     private TextView show_text,answer_text;
+    private float answer;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         number0 = (ImageButton) findViewById(R.id.number0);
         number1 = (ImageButton) findViewById(R.id.number1);
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         show_text = (TextView) findViewById(R.id.show_text);
         answer_text = (TextView) findViewById(R.id.answer_text);
+
+
 
 
         number0.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +117,84 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 show_text.setText(show_text.getText()+"9");
+            }
+        });
+
+        button_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"+");
+            }
+        });
+
+        button_less.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"-");
+            }
+        });
+
+        button_cross.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"*");
+            }
+        });
+
+        button_divil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+"/");
+            }
+        });
+
+        button_dot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText(show_text.getText()+".");
+            }
+        });
+
+        button_clean.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show_text.setText("");
+                answer_text.setText("");
+            }
+        });
+
+        button_equal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int sum_add=0;
+                int sum_less=0;
+
+            String[] a = show_text.getText().toString().split("[+]");
+
+                for(int i=0;i<a.length;i++) {
+
+                    if(a[i].contains("-")) {
+
+                        String[] b=a[i].split("[-]");
+
+                        for(int j=1;j<b.length;j++) {
+                            sum_less=Integer.parseInt(b[0]);
+
+
+
+                            sum_less-=Integer.parseInt(b[j]);
+                        }
+                        a[i]=Integer.toString(sum_less);
+                    }
+
+                int count=Integer.parseInt(a[i]);
+                sum_add +=count;
+
+                }
+
+                answer_text.setText(Integer.toString(sum_add));
+
+
             }
         });
 
