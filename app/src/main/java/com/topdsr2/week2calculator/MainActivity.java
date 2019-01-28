@@ -168,30 +168,46 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int sum_add=0;
                 int sum_less=0;
+                int sum_cross=1;
+                int sum_divil=1;
 
             String[] a = show_text.getText().toString().split("[+]");
 
                 for(int i=0;i<a.length;i++) {
 
-                    if(a[i].contains("-")) {
+                    if(a[i].contains("-")||a[i].contains("*")||a[i].contains("/")) {
 
                         String[] b=a[i].split("[-]");
+                        //sum_less=Integer.parseInt(b[0]);
+                        for(int j=0;j<b.length;j++) {
+                           if(b[j].contains("*")||a[i].contains("/")){
+                                String[] c=b[j].split("[*]");
+                                for(int k=0;k<c.length;k++){
+                                    if(c[k].contains("/")){
+                                        String[] d=c[k].split("[/]");
 
-                        for(int j=1;j<b.length;j++) {
-                            sum_less=Integer.parseInt(b[0]);
+                                        for (int l=0;l<d.length;l++){
 
-
-
-                            sum_less-=Integer.parseInt(b[j]);
+                                            int count4=Integer.parseInt(d[l]);
+                                            sum_divil = sum_divil/count4;
+                                        }
+                                        sum_divil=Integer.parseInt(d[0])*sum_divil;
+                                     c[k]=Integer.toString(sum_divil);
+                                    }
+                                int count3=Integer.parseInt(c[k]);
+                                 sum_cross*=count3;
+                                }
+                             b[j]=Integer.toString(sum_cross);
+                            }
+                            int count2=Integer.parseInt(b[j]);
+                            sum_less-=count2;
                         }
+                        sum_less=Integer.parseInt(b[0])*2+sum_less;
                         a[i]=Integer.toString(sum_less);
                     }
-
                 int count=Integer.parseInt(a[i]);
                 sum_add +=count;
-
                 }
-
                 answer_text.setText(Integer.toString(sum_add));
 
 
