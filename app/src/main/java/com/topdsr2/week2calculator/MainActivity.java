@@ -3,11 +3,8 @@ package com.topdsr2.week2calculator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -166,10 +163,10 @@ public class MainActivity extends AppCompatActivity {
         button_equal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int sum_add=0;
-                int sum_less=0;
-                int sum_cross=1;
-                int sum_divil=1;
+                Double sum_add=0.0;
+                Double sum_less=0.0;
+                Double sum_cross=1.0;
+                Double sum_divil=1.0;
 
             String[] a = show_text.getText().toString().split("[+]");
 
@@ -188,27 +185,27 @@ public class MainActivity extends AppCompatActivity {
 
                                         for (int l=0;l<d.length;l++){
 
-                                            int count4=Integer.parseInt(d[l]);
+                                            Double count4=Double.parseDouble(d[l]);
                                             sum_divil = sum_divil/count4;
                                         }
-                                        sum_divil=Integer.parseInt(d[0])*sum_divil;
-                                     c[k]=Integer.toString(sum_divil);
+                                        sum_divil=Double.parseDouble(d[0])*Double.parseDouble(d[0])*sum_divil;
+                                     c[k]=Double.toString(sum_divil);
                                     }
-                                int count3=Integer.parseInt(c[k]);
+                                Double count3=Double.parseDouble(c[k]);
                                  sum_cross*=count3;
                                 }
-                             b[j]=Integer.toString(sum_cross);
+                             b[j]=Double.toString(sum_cross);
                             }
-                            int count2=Integer.parseInt(b[j]);
+                            Double count2=Double.parseDouble(b[j]);
                             sum_less-=count2;
                         }
-                        sum_less=Integer.parseInt(b[0])*2+sum_less;
-                        a[i]=Integer.toString(sum_less);
+                        sum_less=Double.parseDouble(b[0])*2+sum_less;
+                        a[i]=Double.toString(sum_less);
                     }
-                int count=Integer.parseInt(a[i]);
+                Double count=Double.parseDouble(a[i]);
                 sum_add +=count;
                 }
-                answer_text.setText(Integer.toString(sum_add));
+                answer_text.setText(Double.toString(sum_add));
 
 
             }
